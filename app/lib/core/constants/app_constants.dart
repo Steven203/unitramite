@@ -3,7 +3,7 @@ class AppConstants {
 
   /// Nombre y lema del encabezado. Si se decide otro nombre de marca,
   /// se cambia solo aquí.
-  static const String brandName = 'TRAMITAU';
+  static const String brandName = 'UniTrámite';
   static const String brandTagline = 'Tu asistente guía para la Udenar';
 
   /// Dirección del backend. En Chrome es localhost. Para celular físico o

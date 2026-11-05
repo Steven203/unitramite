@@ -32,4 +32,4 @@ const List<Tramite> sampleTramites = [
 
 const String sampleDataValidity = 'Febrero 2025 (Acuerdo 028)';
 const String sampleVersionLabel =
-    'TRAMITAU Udenar v2.4 • Conexión oficial segura';
+    'UniTrámite Udenar v2.4 • Conexión oficial segura';

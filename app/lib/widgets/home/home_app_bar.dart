@@ -4,16 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/app_colors.dart';
 
-/// Encabezado institucional: menú, marca y acceso al perfil.
+/// Encabezado institucional para móvil.
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({
-    super.key,
-    required this.onMenuPressed,
-    required this.onProfilePressed,
-  });
-
-  final VoidCallback onMenuPressed;
-  final VoidCallback onProfilePressed;
+  const HomeAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(64);
@@ -24,18 +17,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 64,
       centerTitle: true,
       shape: const Border(bottom: BorderSide(color: AppColors.brandBorder)),
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        tooltip: 'Menú principal',
-        onPressed: onMenuPressed,
-      ),
       title: const _Brand(),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 16),
-          child: _ProfileButton(onPressed: onProfilePressed),
-        ),
-      ],
     );
   }
 }
@@ -93,50 +75,6 @@ class _Brand extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _ProfileButton extends StatelessWidget {
-  const _ProfileButton({required this.onPressed});
-
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Tooltip(
-      message: 'Perfil y accesos',
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Material(
-            color: AppColors.primary,
-            shape: const CircleBorder(),
-            child: InkWell(
-              customBorder: const CircleBorder(),
-              onTap: onPressed,
-              child: const SizedBox(
-                width: 40,
-                height: 40,
-                child: Icon(Icons.person, size: 20, color: Colors.white),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 0,
-            right: 0,
-            child: Container(
-              width: 12,
-              height: 12,
-              decoration: BoxDecoration(
-                color: AppColors.brandLime,
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
